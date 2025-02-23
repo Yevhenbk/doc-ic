@@ -62,6 +62,52 @@ El ciclo de instrucción se puede representar mediante diagramas de flujo y diag
 
 # Tema 1: Parte 2
 
+## 1. Diagrama de Estado de la CPU
+El funcionamiento de la CPU se basa en un ciclo de ejecución estructurado en varias fases:
+- **Cálculo de la dirección de la instrucción (CDI)**
+- **Búsqueda de la instrucción (BI)**
+- **Decodificación de la instrucción (DI)**
+- **Cálculo de la dirección del operando (CDO)**
+- **Búsqueda del operando (BO)**
+- **Operación sobre los datos (OD)**
+- **Almacenamiento del operando (AO)**
+- **Gestión de operandos y resultados múltiples**
+- **Acceso a memoria o dispositivos de E/S**
+
+## 2. Ciclo de Interrupción
+El ciclo de interrupción permite que otros módulos del sistema (E/S, memoria) interrumpan el procesamiento normal de la CPU para mejorar la eficiencia y el rendimiento.
+
+### **Objetivo:**
+- Optimizar el tiempo de ejecución del procesador.
+- Permitir la gestión de eventos externos sin desperdiciar ciclos de CPU.
+
+### **Ejemplo:**
+- Una impresora genera una interrupción cuando está lista para recibir más datos.
+
+### **Fases del Ciclo de Interrupción:**
+1. **Comprobar la existencia de una interrupción:**
+   - Si no hay interrupción, la CPU continúa con la siguiente instrucción.
+   - Si hay interrupción, se activa el ciclo de interrupción.
+2. **Guardar el contexto:**
+   - Almacenar el Contador de Programa (PC) y otros registros relevantes.
+3. **Ejecutar la rutina de servicio de interrupción:**
+   - Cargar en el PC la dirección del manejador de interrupciones.
+
+## 3. Diagrama de Flujo del Ciclo de Interrupción
+El ciclo de interrupción se integra con el ciclo normal de instrucciones:
+- **Ciclo de búsqueda** → **Ciclo de ejecución** → **Comprobación de interrupción**
+- Si hay interrupción: se guarda el contexto y se ejecuta el manejador de interrupciones.
+- Si no hay interrupción: la CPU continúa con la siguiente instrucción.
+
+## Conclusión y Recomendaciones de Estudio
+- **Entender el ciclo de interrupción** y su impacto en la CPU.
+- **Analizar los diagramas de estado** y cómo interactúan con la ejecución del procesador.
+- **Relacionar estos conceptos con los sistemas operativos**, especialmente en la gestión de interrupciones por hardware y software.
+
+---
+
+# Tema 1: Parte 3
+
 ## 1. Estructura del Bus
 Los buses en un computador se organizan en grupos funcionales:
 - **Líneas de datos:** Transportan la información entre los componentes.
